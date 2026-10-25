@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kid Clock for YouTube – Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Kid Clock for YouTube</h1>
+    <p class="hint">YouTube (m.youtube.com) videos can be watched only during these times, every day.
+      Outside them, the player is replaced by a clock.</p>
+
+    <section>
+      <h2>Allowed slots</h2>
+      <ul id="slots"></ul>
+      <p id="empty" class="hint" hidden>No slots configured: watching is always blocked.</p>
+      <div class="actions">
+        <button id="add" type="button">Add slot</button>
+        <button id="save" type="button" class="primary">Save</button>
+      </div>
+      <p id="status" role="status"></p>
+    </section>
+
+    <section>
+      <h2>Preview</h2>
+      <div id="preview"></div>
+      <p class="legend"><span class="swatch am"></span>a.m. <span class="swatch pm"></span>p.m.</p>
+    </section>
+  </main>
+
+  <template id="row">
+    <li class="slot">
+      <input type="time" class="start" required aria-label="Start">
+      <span class="dash">–</span>
+      <input type="time" class="end" required aria-label="End">
+      <span class="note"></span>
+      <button type="button" class="remove" aria-label="Remove slot">✕</button>
+    </li>
+  </template>
+
+  <script src="../src/schedule.js"></script>
+  <script src="../src/clock.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

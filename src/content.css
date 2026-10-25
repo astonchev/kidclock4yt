@@ -1,0 +1,50 @@
+[data-kidclock4yt-blocked] {
+  position: relative !important;
+}
+
+/* Watch-page player: keep the clock visible even before the video has sized it. */
+#player-container-id[data-kidclock4yt-blocked] {
+  min-height: min(56.25vw, 70vh) !important;
+}
+
+[data-kidclock4yt-blocked] > :not(.kidclock4yt-overlay) {
+  visibility: hidden !important;
+}
+
+.kidclock4yt-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #1a1a1a !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.kidclock4yt-overlay .kidclock4yt-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 4% 0;
+  box-sizing: border-box;
+}
+
+.kidclock4yt-overlay .kidclock4yt-clock-svg {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.kidclock4yt-overlay .kidclock4yt-clock-caption {
+  flex: 0 0 auto;
+  margin-top: 8px;
+  color: #fff;
+  font: bold 16px/1.2 Arial, Helvetica, sans-serif;
+  text-align: center;
+}
